@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F6F4EF" />
+    <meta name="description" content="核41班优良学风班申报信息收集，填写活动参与和个人获奖情况。" />
+    <title>核41班 · 信息收集</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳转到填写区域</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="核41班信息收集首页"><span class="class-mark">核41</span><span>班级信息收集</span></a>
+      <a class="admin-link" id="admin-link" href="./admin.html">班委管理</a>
+    </header>
+    <main id="main" class="student-main">
+      <div id="preview-notice" class="notice preview-notice" hidden>本地预览 · 示例信息不保存</div>
+      <header class="page-intro">
+        <p class="intro-context">优良学风班申报</p>
+        <h1 id="collection-title">一起记录这一学年的成长</h1>
+        <p class="intro-description">填写你的活动参与和个人获奖情况，用于核41班优良学风班申报。姓名只需选择一次，多项内容可一起提交。</p>
+        <p class="collection-deadline">请于2026年10月20日24:00前完成填写，之后仍可补填。</p>
+      </header>
+
+      <section id="availability" class="availability" aria-live="polite" aria-busy="true">
+        <h2 id="availability-title">正在读取填报信息</h2>
+        <p id="availability-description" class="hint">请稍候，正在确认本次收集的说明和名单。</p>
+        <button id="reload-button" class="button button-secondary" type="button" hidden>重新加载</button>
+      </section>
+
+      <form id="student-form" novalidate hidden>
+        <fieldset id="form-fields" class="form-fields">
+          <legend class="visually-hidden">活动参与与个人获奖信息</legend>
+          <section class="form-section name-section" aria-labelledby="name-heading">
+            <div class="section-heading"><h2 id="name-heading">你的姓名</h2><span class="section-meta">必填</span></div>
+            <div class="field name-field">
+              <label for="student-id">选择姓名</label>
+              <select id="student-id" name="student_id" autocomplete="off" aria-describedby="student-help student-error">
+                <option value="">请选择本人姓名</option>
+              </select>
+              <p id="student-help" class="hint">请核对后再选择。名单有遗漏或重名难以区分时，请联系班委。</p>
+              <p id="student-error" class="error field-error" data-error-for="student_id" hidden></p>
+            </div>
+          </section>
+
+          <section class="form-section" aria-labelledby="activities-heading">
+            <div class="section-heading"><h2 id="activities-heading">活动参与</h2><span class="section-meta">可填写多项</span></div>
+            <p class="scope-label">活动统计范围</p>
+            <p id="activity-scope" class="scope-text"></p>
+            <fieldset class="choice-field" aria-describedby="activity-answer-error">
+              <legend>在上述范围内，你有活动参与情况吗？</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="has_activities" value="yes" /><span>有，填写活动</span></label>
+                <label class="choice"><input type="radio" name="has_activities" value="no" /><span>无</span></label>
+              </div>
+              <p id="activity-answer-error" class="error field-error" data-error-for="has_activities" hidden></p>
+            </fieldset>
+            <div id="activity-details" class="details" hidden>
+              <p class="hint detail-help">每项选择一个主要类别。跨类别事项由班委按院系统一口径整理。</p>
+              <div id="activity-rows"></div>
+              <button class="button button-secondary add-button" id="add-activity" type="button"><span aria-hidden="true">＋</span> 添加一项活动</button>
+              <p id="activities-error" class="error field-error" data-error-for="activities" hidden></p>
+            </div>
+            <p id="no-activity-note" class="answer-note hint" hidden>本次不添加活动明细。此前已提交的活动会保留。</p>
+          </section>
+
+          <section class="form-section" aria-labelledby="awards-heading">
+            <div class="section-heading"><h2 id="awards-heading">个人获奖</h2><span class="section-meta">可填写多项</span></div>
+            <p class="scope-label">获奖统计范围</p>
+            <p id="award-scope" class="scope-text"></p>
+            <fieldset class="choice-field" aria-describedby="award-answer-error">
+              <legend>在上述范围内，你有个人获奖情况吗？</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="has_awards" value="yes" /><span>有，填写奖项</span></label>
+                <label class="choice"><input type="radio" name="has_awards" value="no" /><span>无</span></label>
+              </div>
+              <p id="award-answer-error" class="error field-error" data-error-for="has_awards" hidden></p>
+            </fieldset>
+            <div id="award-details" class="details" hidden>
+              <p class="hint detail-help">奖项名称请写完整，包含等级或名次，例如“××竞赛二等奖”。</p>
+              <div id="award-rows"></div>
+              <button class="button button-secondary add-button" id="add-award" type="button"><span aria-hidden="true">＋</span> 添加一项奖项</button>
+              <p id="awards-error" class="error field-error" data-error-for="awards" hidden></p>
+            </div>
+            <p id="no-award-note" class="answer-note hint" hidden>本次不添加获奖明细。此前已提交的奖项会保留。</p>
+          </section>
+        </fieldset>
+        <div class="submission-area">
+          <p class="submission-note">两部分均选择“无”也可以提交。补充填报会追加内容；如需修改已提交的信息，请联系班委。</p>
+          <div id="submission-status" class="notice" role="status" tabindex="-1" hidden></div>
+          <div class="submit-actions">
+            <button class="button" id="submit-button" type="submit">提交本次填写</button>
+            <button class="button button-secondary" id="new-after-failure" type="button" hidden>开始新的填写</button>
+          </div>
+          <p class="hint draft-note">未提交的内容仅在当前页面保留，关闭或刷新页面后会丢失。</p>
+        </div>
+      </form>
+
+      <section id="success-panel" class="success-panel" aria-labelledby="success-title" hidden>
+        <p class="success-caption">本次填写已保存</p>
+        <h2 id="success-title" tabindex="-1">提交成功，谢谢你的填写</h2>
+        <dl class="receipt-details"><div><dt>回执编号</dt><dd id="receipt-id"></dd></div><div><dt>提交时间</dt><dd id="receipt-time"></dd></div></dl>
+        <p>如有遗漏可再次补充；如需修改已提交内容，请联系班委。</p>
+        <button class="button" id="supplement-button" type="button">继续补充填写</button>
+      </section>
+    </main>
+    <footer class="site-footer"><span>核41班</span><span>本次信息仅用于班级申报整理</span></footer>
+
+    <dialog id="restart-dialog" aria-labelledby="restart-title">
+      <h2 id="restart-title">开始新的填写？</h2>
+      <p>上次提交的结果尚未确认。建议先重试，确认是否已保存。</p>
+      <p>开始新填写将清空当前表单。上次若已保存，记录仍会保留，完全相同的明细会自动去重。</p>
+      <div class="dialog-actions"><button id="cancel-restart" class="button button-secondary" type="button">返回重试</button><button id="confirm-restart" class="button" type="button">开始新的填写</button></div>
+    </dialog>
+    <script type="module" src="/src/student.js"></script>
+  </body>
+</html>
