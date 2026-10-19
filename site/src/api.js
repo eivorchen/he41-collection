@@ -19,7 +19,7 @@ const client = mode === 'live' ? createClient(url, key, {
 }) : null;
 
 async function rpc(name, params) {
-  if (!client) throw new Error(mode === 'preview' ? '这是本地只读预览，示例信息不会提交或保存。' : '信息收集尚未开放，请稍后再试或联系班委。');
+  if (!client) throw new Error(mode === 'preview' ? '这是本地只读预览，示例信息不会提交或保存。' : '信息收集尚未开放，请稍后再试或联系陈昱山。');
   const { data, error } = await client.rpc(name, params).abortSignal(AbortSignal.timeout(20000));
   if (error) throw error;
   return data;
@@ -100,5 +100,5 @@ export function errorMessage(error) {
   if (error?.code === '42501' || /permission denied|jwt|token.*expired/i.test(message)) return '当前账号没有管理权限或登录已过期，请重新登录或联系项目管理员。';
   if (/abort|timeout|fetch|network|load failed/i.test(message) || error?.name === 'TimeoutError') return '网络连接未完成，填写内容已保留。请检查网络后重试；重试不会重复记录同一份提交。';
   if (/[\u4e00-\u9fff]/.test(message) && message.length < 240) return message;
-  return '暂时无法完成操作，请稍后重试。若问题持续，请联系班委。';
+  return '暂时无法完成操作，请稍后重试。若问题持续，请联系陈昱山。';
 }

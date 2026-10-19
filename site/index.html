@@ -11,7 +11,7 @@
     <a class="skip-link" href="#main">跳转到填写区域</a>
     <header class="site-header">
       <a class="brand" href="./" aria-label="核41班信息收集首页"><span class="class-mark">核41</span><span>班级信息收集</span></a>
-      <a class="admin-link" id="admin-link" href="./admin.html">班委管理</a>
+      <a class="admin-link" id="admin-link" href="./admin.html">管理员入口</a>
     </header>
     <main id="main" class="student-main">
       <div id="preview-notice" class="notice preview-notice" hidden>本地预览 · 示例信息不保存</div>
@@ -38,16 +38,17 @@
               <select id="student-id" name="student_id" autocomplete="off" aria-describedby="student-help student-error">
                 <option value="">请选择本人姓名</option>
               </select>
-              <p id="student-help" class="hint">请核对后再选择。名单有遗漏或重名难以区分时，请联系班委。</p>
+              <p id="student-help" class="hint">请核对后再选择。名单有遗漏或重名难以区分时，请联系陈昱山。</p>
               <p id="student-error" class="error field-error" data-error-for="student_id" hidden></p>
             </div>
           </section>
 
           <section class="form-section" aria-labelledby="activities-heading">
             <div class="section-heading"><h2 id="activities-heading">活动参与</h2><span class="section-meta">可填写多项</span></div>
+            <p id="activity-description" class="section-description">包括 SRT 项目、各类竞赛，以及课外科技、文化和体育活动。参加过即可填写，不要求获奖。</p>
             <p class="scope-label">活动统计范围</p>
             <p id="activity-scope" class="scope-text"></p>
-            <fieldset class="choice-field" aria-describedby="activity-answer-error">
+            <fieldset class="choice-field" aria-describedby="activity-description activity-answer-error">
               <legend>在上述范围内，你有活动参与情况吗？</legend>
               <div class="choices">
                 <label class="choice"><input type="radio" name="has_activities" value="yes" /><span>有，填写活动</span></label>
@@ -66,9 +67,10 @@
 
           <section class="form-section" aria-labelledby="awards-heading">
             <div class="section-heading"><h2 id="awards-heading">个人获奖</h2><span class="section-meta">可填写多项</span></div>
+            <p id="award-description" class="section-description">指你获得的各类奖励或荣誉，如竞赛奖项、奖学金、荣誉称号等。本人参与获得的团队奖也可填写。</p>
             <p class="scope-label">获奖统计范围</p>
             <p id="award-scope" class="scope-text"></p>
-            <fieldset class="choice-field" aria-describedby="award-answer-error">
+            <fieldset class="choice-field" aria-describedby="award-description award-answer-error">
               <legend>在上述范围内，你有个人获奖情况吗？</legend>
               <div class="choices">
                 <label class="choice"><input type="radio" name="has_awards" value="yes" /><span>有，填写奖项</span></label>
@@ -86,7 +88,7 @@
           </section>
         </fieldset>
         <div class="submission-area">
-          <p class="submission-note">两部分均选择“无”也可以提交。补充填报会追加内容；如需修改已提交的信息，请联系班委。</p>
+          <p class="submission-note">两部分均选择“无”也可以提交。补充填报会追加内容；如需修改已提交的信息，请联系陈昱山。</p>
           <div id="submission-status" class="notice" role="status" tabindex="-1" hidden></div>
           <div class="submit-actions">
             <button class="button" id="submit-button" type="submit">提交本次填写</button>
@@ -100,7 +102,7 @@
         <p class="success-caption">本次填写已保存</p>
         <h2 id="success-title" tabindex="-1">提交成功，谢谢你的填写</h2>
         <dl class="receipt-details"><div><dt>回执编号</dt><dd id="receipt-id"></dd></div><div><dt>提交时间</dt><dd id="receipt-time"></dd></div></dl>
-        <p>如有遗漏可再次补充；如需修改已提交内容，请联系班委。</p>
+        <p>如有遗漏可再次补充；如需修改已提交内容，请联系陈昱山。</p>
         <button class="button" id="supplement-button" type="button">继续补充填写</button>
       </section>
     </main>

@@ -274,7 +274,7 @@ async function loadForm() {
       document.title = `${collection.title} · 核41班`;
     }
     if (!collection?.is_open) {
-      availability('当前未开放填写', '本次收集尚未开始或已关闭。开放安排请留意班级通知；有补充信息可联系班委。');
+      availability('当前未开放填写', '本次收集尚未开始或已关闭。开放安排请留意班级通知；有补充信息可联系陈昱山。');
       $('#reload-button').textContent = '刷新状态';
       return;
     }
